@@ -20,6 +20,11 @@ return [
             'theme' => [
                 'basePath' => '@app/themes/christmas',
                 'baseUrl' => '@web/themes/christmas',
+                'pathMap' => [
+                    '@app/views' => '@app/themes/christmas/views',
+                    '@app/modules' => '@app/themes/christmas/modules',
+                    '@app/widgets' => '@app/themes/christmas/widgets',
+                ],
             ],
         ],
         'urlManager' => [
