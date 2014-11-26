@@ -25,7 +25,7 @@ class ContactForm extends Model
             // name, email, subject and body are required
             [['name', 'email', 'subject', 'body', 'verifyCode'], 'required'],
             // email has to be a valid email address
-            ['email', 'email'],
+            ['email', 'email', 'enableIDN' => true],
             // verifyCode needs to be entered correctly
             ['verifyCode', 'captcha'],
         ];
