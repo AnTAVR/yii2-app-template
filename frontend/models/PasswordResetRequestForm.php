@@ -1,6 +1,7 @@
 <?php
 namespace frontend\models;
 
+use common\helpers\Url;
 use common\models\User;
 use Yii;
 use yii\base\Model;
@@ -59,8 +60,8 @@ class PasswordResetRequestForm extends Model
 
             if ($user->save()) {
                 return Yii::$app->mailer->compose('passwordResetToken', ['user' => $user])
-                    ->setFrom([Yii::$app->params['supportEmail'] => Yii::$app->name . ' robot'])
-                    ->setTo($this->email)
+                    ->setFrom([Url::email2ascii(Yii::$app->params['supportEmail']) => Yii::$app->name . ' robot'])
+                    ->setTo(Url::email2ascii($this->email))
                     ->setSubject(Yii::t('app', 'Восстановление пароля для {user}',['user'=>Yii::$app->name]))
                     ->send();
             }
