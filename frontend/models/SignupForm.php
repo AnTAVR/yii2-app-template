@@ -27,7 +27,7 @@ class SignupForm extends Model
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
-            ['email', 'email'],
+            ['email', 'email', 'enableIDN' => true],
             ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => Yii::t('app', 'Этот E-mail уже зарегистрирован.')],
 
             ['password', 'required'],
