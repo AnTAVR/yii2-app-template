@@ -1,5 +1,6 @@
 <?php
 use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
@@ -18,6 +19,10 @@ $this->params['breadcrumbs'][] = $this->title;
         <div class="col-lg-5">
             <?php $form = ActiveForm::begin(['id' => 'request-password-reset-form']); ?>
             <?= $form->field($model, 'email') ?>
+            <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                'imageOptions' => ['title' => Yii::t('app', 'Получить новый код'), 'style' => 'cursor: pointer;'],
+            ]) ?>
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'Отправить'), ['class' => 'btn btn-primary']) ?>
             </div>

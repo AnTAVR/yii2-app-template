@@ -1,5 +1,6 @@
 <?php
 use yii\bootstrap\ActiveForm;
+use yii\captcha\Captcha;
 use yii\helpers\Html;
 
 /* @var $this yii\web\View */
@@ -26,6 +27,10 @@ $this->params['breadcrumbs'][] = $this->title;
                 Yii::t('app', 'Задайте сложный пароль, используя заглавные и строчные буквы, цифры и специальные символы.') .
                 '<br/>' . Yii::t('app', 'Минимальная длина пароля {minChars} символов.', [
                     'minChars' => Yii::$app->params['minPassword']])) ?>
+            <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
+                'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
+                'imageOptions' => ['title' => Yii::t('app', 'Получить новый код'), 'style' => 'cursor: pointer;'],
+            ]) ?>
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'Регистрация'), ['class' => 'btn btn-primary', 'name' => 'signup-button']) ?>
             </div>

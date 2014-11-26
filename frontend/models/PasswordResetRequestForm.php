@@ -12,6 +12,7 @@ use yii\base\Model;
 class PasswordResetRequestForm extends Model
 {
     public $email;
+    public $verifyCode;
 
     /**
      * @inheritdoc
@@ -27,6 +28,8 @@ class PasswordResetRequestForm extends Model
                 'filter' => ['status' => User::STATUS_ACTIVE],
                 'message' => Yii::t('app', 'Пользователь с этим E-mail не зарегистрирован или заблокирован.')
             ],
+            // verifyCode needs to be entered correctly
+            ['verifyCode', 'captcha'],
         ];
     }
 
@@ -37,6 +40,7 @@ class PasswordResetRequestForm extends Model
     {
         return [
             'email' => Yii::t('app', 'E-mail'),
+            'verifyCode' => Yii::t('app', 'Kод проверки'),
         ];
     }
 

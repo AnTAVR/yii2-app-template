@@ -13,6 +13,7 @@ class SignupForm extends Model
     public $username;
     public $email;
     public $password;
+    public $verifyCode;
 
     /**
      * @inheritdoc
@@ -32,6 +33,8 @@ class SignupForm extends Model
 
             ['password', 'required'],
             ['password', 'string', 'min' => Yii::$app->params['minPassword']],
+            // verifyCode needs to be entered correctly
+            ['verifyCode', 'captcha'],
         ];
     }
 
@@ -44,6 +47,7 @@ class SignupForm extends Model
             'username' => Yii::t('app', 'Логин'),
             'password' => Yii::t('app', 'Пароль'),
             'email' => Yii::t('app', 'E-mail'),
+            'verifyCode' => Yii::t('app', 'Kод проверки'),
         ];
     }
 
