@@ -50,8 +50,8 @@ AppAsset::register($this);
     ]);
 
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => '<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>' . Yii::t('app', 'Регистрация'), 'url' => ['/site/signup']];
-        $menuItems[] = ['label' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span>' . Yii::t('app', 'Вход'), 'url' => ['/site/login']];
+        $menuItems[] = ['label' => '<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>' . Yii::t('app', 'Регистрация'), 'url' => ['/user/signup']];
+        $menuItems[] = ['label' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span>' . Yii::t('app', 'Вход'), 'url' => ['/user/login']];
     } else {
         /** @var $identity common\models\User */
         $identity = Yii::$app->user->identity;
@@ -62,7 +62,7 @@ AppAsset::register($this);
                 ['label' => '<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>' . Yii::t('app', 'Внутренняя почта'), 'url' => ['/messages/inbox']],
                 '<li role="presentation" class="divider"></li>',
                 ['label' => '<span class="glyphicon glyphicon-off" aria-hidden="true"></span>' . Yii::t('app', 'Выход'),
-                    'url' => ['/site/logout'],
+                    'url' => ['/user/logout'],
                     'linkOptions' => ['data-method' => 'post']],
             ],
         ];

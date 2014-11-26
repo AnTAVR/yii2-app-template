@@ -21,7 +21,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model, 'password')->passwordInput() ?>
             <?= $form->field($model, 'rememberMe')->checkbox() ?>
             <div style="color:#999;margin:1em 0">
-                <?= Yii::t('app', 'Если Вы забыли пароль, то можете его {url}.', ['url' => Html::a(Yii::t('app', 'восстановить'), ['site/request-password-reset'])]) ?>
+                <?= Yii::t('app', 'Если Вы забыли пароль, то можете его {url}.', ['url' => Html::a(Yii::t('app', 'восстановить'), ['user/request-password-reset'])]) ?>
             </div>
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'Вход'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>
