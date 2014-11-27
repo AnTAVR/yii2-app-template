@@ -11,6 +11,7 @@ return [
     'basePath' => dirname(__DIR__),
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
+    'on beforeRequest' => ['common\components\Events', 'beforeRequest'],
     'modules' => [],
     'components' => [
         'user' => [
