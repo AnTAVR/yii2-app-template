@@ -1,6 +1,7 @@
 <?php
 namespace frontend\controllers;
 
+use common\components\Controller;
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
 use frontend\models\ResetPasswordForm;
@@ -10,7 +11,6 @@ use yii\base\InvalidParamException;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
-use yii\web\Controller;
 
 class UserController extends Controller
 {
