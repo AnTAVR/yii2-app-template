@@ -24,6 +24,7 @@ $this->params['breadcrumbs'][] = $this->title;
             <?= $form->field($model, 'verifyCode')->widget(Captcha::className(), [
                 'template' => '<div class="row"><div class="col-lg-3">{image}</div><div class="col-lg-6">{input}</div></div>',
                 'imageOptions' => ['title' => Yii::t('app', 'Получить новый код'), 'style' => 'cursor: pointer;'],
+                'captchaAction' => '/site/captcha',
             ]) ?>
             <div style="color:#999;margin:1em 0">
                 <?= Yii::t('app', 'Если Вы забыли пароль, то можете его {url}.', ['url' => Html::a(Yii::t('app', 'восстановить'), ['user/request-password-reset'])]) ?>

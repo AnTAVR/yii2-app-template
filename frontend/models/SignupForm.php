@@ -34,7 +34,8 @@ class SignupForm extends Model
             ['password', 'required'],
             ['password', 'string', 'min' => Yii::$app->params['minPassword']],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            ['verifyCode', 'required'],
+            ['verifyCode', 'captcha', 'captchaAction' => '/site/captcha'],
         ];
     }
 

@@ -29,7 +29,8 @@ class PasswordResetRequestForm extends Model
                 'message' => Yii::t('app', 'Пользователь с этим E-mail не зарегистрирован или заблокирован.')
             ],
             // verifyCode needs to be entered correctly
-            ['verifyCode', 'captcha'],
+            ['verifyCode', 'required'],
+            ['verifyCode', 'captcha', 'captchaAction' => '/site/captcha'],
         ];
     }
 
