@@ -2,10 +2,10 @@
 
 namespace frontend\modules\user\controllers;
 
-use common\models\LoginForm;
-use frontend\models\PasswordResetRequestForm;
-use frontend\models\ResetPasswordForm;
-use frontend\models\SignupForm;
+use common\modules\user\models\LoginForm;
+use frontend\modules\user\models\PasswordResetRequestForm;
+use frontend\modules\user\models\ResetPasswordForm;
+use frontend\modules\user\models\SignupForm;
 use Yii;
 use yii\base\InvalidParamException;
 use yii\filters\AccessControl;
@@ -59,7 +59,7 @@ class DefaultController extends Controller
      */
     public function actionIndex($id = null)
     {
-        return $this->render('index');
+        return $this->render('index', ['id' => $id]);
     }
 
     /**

@@ -4,7 +4,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \frontend\models\ResetPasswordForm */
+/* @var $model frontend\modules\user\models\ResetPasswordForm */
 
 $this->title = Yii::t('app', 'Восстановление пароля');
 $this->params['breadcrumbs'][] = $this->title;

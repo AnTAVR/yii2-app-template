@@ -1,5 +1,5 @@
 <?php
-namespace common\models;
+namespace common\modules\user\models;
 
 use Yii;
 use yii\base\Model;

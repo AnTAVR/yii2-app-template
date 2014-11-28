@@ -1,8 +1,8 @@
 <?php
-namespace frontend\models;
+namespace frontend\modules\user\models;
 
 use common\helpers\Url;
-use common\models\User;
+use common\modules\user\models\User;
 use Yii;
 use yii\base\Model;
 
@@ -24,7 +24,7 @@ class PasswordResetRequestForm extends Model
             ['email', 'required'],
             ['email', 'email', 'enableIDN' => true],
             ['email', 'exist',
-                'targetClass' => '\common\models\User',
+                'targetClass' => '\common\modules\user\models\User',
                 'filter' => ['status' => User::STATUS_ACTIVE],
                 'message' => Yii::t('app', 'Пользователь с этим E-mail не зарегистрирован или заблокирован.')
             ],
@@ -64,7 +64,7 @@ class PasswordResetRequestForm extends Model
             }
 
             if ($user->save()) {
-                return Yii::$app->mailer->compose('passwordResetToken', ['user' => $user])
+                return Yii::$app->getMailer(['viewPath' => '@common/mail'])->compose('passwordResetToken', ['user' => $user])
                     ->setFrom([Url::email2ascii(Yii::$app->params['supportEmail']) => Yii::$app->name . ' robot'])
                     ->setTo(Url::email2ascii($this->email))
                     ->setSubject(Yii::t('app', 'Восстановление пароля для {user}',['user'=>Yii::$app->name]))

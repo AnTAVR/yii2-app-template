@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \common\models\LoginForm */
+/* @var $model common\modules\user\models\LoginForm */
 
 $this->title = Yii::t('app', 'Вход');
 $this->params['breadcrumbs'][] = $this->title;

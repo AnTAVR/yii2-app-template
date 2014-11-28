@@ -5,7 +5,7 @@ use yii\helpers\Html;
 
 /* @var $this yii\web\View */
 /* @var $form yii\bootstrap\ActiveForm */
-/* @var $model \frontend\models\SignupForm */
+/* @var $model frontend\modules\user\models\SignupForm */
 
 $this->title = Yii::t('app', 'Регистрация');
 $this->params['breadcrumbs'][] = $this->title;

@@ -53,7 +53,7 @@ AppAsset::register($this);
         $menuItems[] = ['label' => '<span class="glyphicon glyphicon-asterisk" aria-hidden="true"></span>' . Yii::t('app', 'Регистрация'), 'url' => ['/user/default/signup']];
         $menuItems[] = ['label' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span>' . Yii::t('app', 'Вход'), 'url' => ['/user/default/login']];
     } else {
-        /** @var $identity common\models\User */
+        /** @var $identity common\modules\user\models\User */
         $identity = Yii::$app->user->identity;
         $menuItems[] = [
             'label' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span>' . $identity->username,

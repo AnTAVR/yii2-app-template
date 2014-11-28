@@ -1,7 +1,7 @@
 <?php
-namespace frontend\models;
+namespace frontend\modules\user\models;
 
-use common\models\User;
+use common\modules\user\models\User;
 use Yii;
 use yii\base\Model;
 
@@ -23,13 +23,13 @@ class SignupForm extends Model
         return [
             ['username', 'filter', 'filter' => 'trim'],
             ['username', 'required'],
-            ['username', 'unique', 'targetClass' => '\common\models\User', 'message' => Yii::t('app', 'Этот логин уже зарегистрирован.')],
+            ['username', 'unique', 'targetClass' => '\common\modules\user\models\User', 'message' => Yii::t('app', 'Этот логин уже зарегистрирован.')],
             ['username', 'string', 'min' => Yii::$app->params['minUsername'], 'max' => Yii::$app->params['maxUsername']],
 
             ['email', 'filter', 'filter' => 'trim'],
             ['email', 'required'],
             ['email', 'email', 'enableIDN' => true],
-            ['email', 'unique', 'targetClass' => '\common\models\User', 'message' => Yii::t('app', 'Этот E-mail уже зарегистрирован.')],
+            ['email', 'unique', 'targetClass' => '\common\modules\user\models\User', 'message' => Yii::t('app', 'Этот E-mail уже зарегистрирован.')],
 
             ['password', 'required'],
             ['password', 'string', 'min' => Yii::$app->params['minPassword']],
