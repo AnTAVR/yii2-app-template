@@ -10,7 +10,7 @@ use yii\helpers\Html;
 $this->title = Yii::t('app', 'Вход');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-login">
+<div class="user-default-login">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p><?= Yii::t('app', 'Пожалуйста заполните следующую форму для входа:') ?></p>
@@ -27,7 +27,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'captchaAction' => '/site/captcha',
             ]) ?>
             <div style="color:#999;margin:1em 0">
-                <?= Yii::t('app', 'Если Вы забыли пароль, то можете его {url}.', ['url' => Html::a(Yii::t('app', 'восстановить'), ['user/request-password-reset'])]) ?>
+                <?= Yii::t('app', 'Если Вы забыли пароль, то можете его {url}.', ['url' => Html::a(Yii::t('app', 'восстановить'), ['/user/default/request-password-reset'])]) ?>
             </div>
             <div class="form-group">
                 <?= Html::submitButton(Yii::t('app', 'Вход'), ['class' => 'btn btn-primary', 'name' => 'login-button']) ?>

@@ -1,10 +1,10 @@
 <?php
 
-namespace backend\modules\user;
+namespace frontend\modules\user;
 
 class Module extends \yii\base\Module
 {
-    public $controllerNamespace = 'backend\modules\user\controllers';
+    public $controllerNamespace = 'frontend\modules\user\controllers';
 
     public function init()
     {

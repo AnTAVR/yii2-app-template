@@ -14,7 +14,7 @@ return [
     'on beforeRequest' => ['common\components\Events', 'beforeRequest'],
     'modules' => [
         'user' => [
-            'class' => 'app\modules\user\Module',
+            'class' => 'backend\modules\user\Module',
         ],
     ],
     'components' => [

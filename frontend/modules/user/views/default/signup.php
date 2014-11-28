@@ -10,7 +10,7 @@ use yii\helpers\Html;
 $this->title = Yii::t('app', 'Регистрация');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-signup">
+<div class="user-default-signup">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p><?= Yii::t('app', 'Пожалуйста заполните следующую форму для регистрации:') ?></p>

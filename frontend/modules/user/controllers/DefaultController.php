@@ -1,5 +1,6 @@
 <?php
-namespace frontend\controllers;
+
+namespace frontend\modules\user\controllers;
 
 use common\models\LoginForm;
 use frontend\models\PasswordResetRequestForm;
@@ -12,7 +13,11 @@ use yii\filters\VerbFilter;
 use yii\web\BadRequestHttpException;
 use yii\web\Controller;
 
-class UserController extends Controller
+/**
+ * Class DefaultController
+ * @package app\modules\user\controllers
+ */
+class DefaultController extends Controller
 {
     /**
      * @inheritdoc
@@ -48,11 +53,18 @@ class UserController extends Controller
         ];
     }
 
-    public function actionIndex($id)
+    /**
+     * @param $id integer
+     * @return string
+     */
+    public function actionIndex($id = null)
     {
         return $this->render('index');
     }
 
+    /**
+     * @return string|\yii\web\Response
+     */
     public function actionLogin()
     {
         if (!Yii::$app->user->isGuest) {
@@ -69,6 +81,9 @@ class UserController extends Controller
         }
     }
 
+    /**
+     * @return \yii\web\Response
+     */
     public function actionLogout()
     {
         Yii::$app->user->logout();
@@ -76,6 +91,9 @@ class UserController extends Controller
         return $this->goHome();
     }
 
+    /**
+     * @return string|\yii\web\Response
+     */
     public function actionSignup()
     {
         $model = new SignupForm();
@@ -92,6 +110,9 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * @return string|\yii\web\Response
+     */
     public function actionRequestPasswordReset()
     {
         $model = new PasswordResetRequestForm();
@@ -110,6 +131,11 @@ class UserController extends Controller
         ]);
     }
 
+    /**
+     * @param $token string
+     * @return string|\yii\web\Response
+     * @throws BadRequestHttpException
+     */
     public function actionResetPassword($token)
     {
         try {
@@ -128,5 +154,4 @@ class UserController extends Controller
             'model' => $model,
         ]);
     }
-
 }

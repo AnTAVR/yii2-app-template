@@ -10,7 +10,7 @@ use yii\helpers\Html;
 $this->title = Yii::t('app', 'Запрос на восстановление пароля');
 $this->params['breadcrumbs'][] = $this->title;
 ?>
-<div class="site-request-password-reset">
+<div class="user-default-request-password-reset">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p><?= Yii::t('app', 'Пожалуйста введите Ваш E-mail. На него будет отправлена инструкция по восстановлению пароля.') ?></p>
