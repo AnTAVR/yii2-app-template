@@ -51,14 +51,14 @@ AppAsset::register($this);
     ]);
     $menuItems = [];
     if (Yii::$app->user->isGuest) {
-        $menuItems[] = ['label' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span>' . Yii::t('app', 'Вход'), 'url' => ['/user/login']];
+        $menuItems[] = ['label' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span>' . Yii::t('app', 'Вход'), 'url' => ['/user/default/login']];
     } else {
         $menuItems[] = ['label' => '<span class="glyphicon glyphicon-home" aria-hidden="true"></span>' . Yii::t('app', 'Home'), 'url' => ['/site/index']];
         /** @var $identity common\models\User */
         $identity = Yii::$app->user->identity;
         $menuItems[] = [
             'label' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span>' . Yii::t('app', 'Выход ({username})', ['username' => $identity->username]),
-            'url' => ['/user/logout'],
+            'url' => ['/user/default/logout'],
             'linkOptions' => ['data-method' => 'post']
         ];
     }

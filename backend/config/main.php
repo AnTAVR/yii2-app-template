@@ -12,12 +12,16 @@ return [
     'controllerNamespace' => 'backend\controllers',
     'bootstrap' => ['log'],
     'on beforeRequest' => ['common\components\Events', 'beforeRequest'],
-    'modules' => [],
+    'modules' => [
+        'user' => [
+            'class' => 'app\modules\user\Module',
+        ],
+    ],
     'components' => [
         'user' => [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
-            'loginUrl' => ['user/login'],
+            'loginUrl' => ['/user/default/login'],
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
