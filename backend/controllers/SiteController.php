@@ -1,9 +1,9 @@
 <?php
 namespace backend\controllers;
 
-use common\components\Controller;
 use Yii;
 use yii\filters\AccessControl;
+use yii\web\Controller;
 
 /**
  * Site controller
