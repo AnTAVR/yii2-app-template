@@ -22,10 +22,13 @@ class UserController extends Controller
         return [
             'access' => [
                 'class' => AccessControl::className(),
-                'only' => ['logout', 'signup'],
                 'rules' => [
                     [
-                        'actions' => ['signup'],
+                        'actions' => ['index'],
+                        'allow' => true,
+                    ],
+                    [
+                        'actions' => ['signup', 'login', 'request-password-reset', 'reset-password'],
                         'allow' => true,
                         'roles' => ['?'],
                     ],
