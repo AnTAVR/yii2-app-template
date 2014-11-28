@@ -8,6 +8,7 @@ return [
             'password' => '',
             'charset' => 'utf8',
             'enableSchemaCache' => true,
+            'tablePrefix' => YII_ENV . '_',
         ],
         'mailer' => [
             'class' => 'yii\swiftmailer\Mailer',
